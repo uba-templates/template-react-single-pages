@@ -1,6 +1,6 @@
 # React Single Pages Application 1.0.0
 
-> 基于webpack+react搭建基本快速发开脚手架并使用强大的集成开发工具[ uba ](https://github.com/iuap-design/tinper-uba)
+> 基于webpack+react搭建基本快速开发脚手架并使用强大的集成开发工具[ uba ](https://github.com/iuap-design/tinper-uba)
 
 ### 说明
 
