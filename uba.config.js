@@ -14,13 +14,13 @@ const svrConfig = {
   port: 3000
 };
 
-//远程代理访问
+//远程代理访问，可以配置多个代理服务
 const proxyConfig = [{
-  enable: false,
-  router: "/",
+  enable: false,//true启用代理,mock服务失效.
+  router: "/",//代理的路由
   url: "cnodejs.org",
   options : {
-    filter : function(req,res){
+    filter : function(req,res){//不需要代理可以排除
       return (req.url.indexOf("webpack_hmr") > -1 ? false : true);
     }
   }
@@ -32,8 +32,8 @@ const staticConfig = {
 };
 
 
-//生产环境的配置
-var devConfig = {
+//开发环境的webpack3配置
+const devConfig = {
   devtool: "cheap-module-source-map",
   entry: {
     vendors: ["react", "react-dom"],
@@ -120,11 +120,10 @@ var devConfig = {
   }
 }
 
-/*
- * 最终发布的配置
- *
- */
-var prodConfig = {
+
+
+//生产环境的webpack3配置
+const prodConfig = {
   entry: {
     vendors: ["react", "react-dom"],
     app: "./src/entry/index.js"
@@ -218,6 +217,8 @@ var prodConfig = {
 }
 
 
+
+//最终向uba导出配置文件
 module.exports = {
   devConfig: devConfig,
   prodConfig: prodConfig,
