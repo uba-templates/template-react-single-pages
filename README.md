@@ -87,8 +87,7 @@
 
 2. 代理服务的设置：
 如下配置，`proxyConfig`是一个数组对象参数，可以配置多个，当`enable:true`的时候，启用该代理功能，`router:"proxy"`代理的路径是哪个，当配置成proxy的时候，访问我们的项目`http://127.0.0.1:3000/proxy/你的代理路径资源地址`这样来访问就可以了。
-
-  例子里面的地址是`url:"cnodejs.org"`，远程的接口访问是：`http://cnodejs.org/api/v1/topics`；本地代理过去访问地址就是：`http://127.0.0.1:3000/proxy/api/v1/topics`，也可以去掉`proxy`这个代理路由，但是这样会导致路由跟现有的项目冲突，这样会有问题的。最好在请求数据的时候去配置一个可控制的参数来切换数据模拟和代理线上的问题。
+例子里面的地址是`url:"cnodejs.org"`，远程的接口访问是：`http://cnodejs.org/api/v1/topics`；本地代理过去访问地址就是：`http://127.0.0.1:3000/proxy/api/v1/topics`，也可以去掉`proxy`这个代理路由，但是这样会导致路由跟现有的项目冲突，这样会有问题的。最好在请求数据的时候去配置一个可控制的参数来切换数据模拟和代理线上的问题。
 
   当有需要排除不需要代理的情况，可以设置`filter`该参数，来编程去实现哪些资源是走代理，哪些不走代理。具体需要查询文档[proxy](https://www.npmjs.com/package/express-http-proxy)
 
