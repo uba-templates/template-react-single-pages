@@ -44,7 +44,7 @@
 │           └── post.json
 ├── package.json
 ├── postcss.config.js                  # postcss的基本配置文件
-├── src -- 存放开发源代码文件夹
+├── src                                # 开发源代码
 │   ├── assets                         # 开发使用到的资源文件
 │   │   └── images
 │   │       ├── favicon.png
@@ -119,5 +119,5 @@
 4. 不想配置模拟数据路由直接访问`mock`下的`json` :
 
   `uba-server`插件默认加载根目录`mock`文件夹内的资源托管，可以直接访问里面的`json`文件。`http://127.0.0.1:3000/api/user/get.json`->`./mock/api/user/get.json`。
-  
+
 5. `devConfig`是开发环境，是给`uba-server`插件读取用的，`prodConfig`是生产环境，是给`uba-build`构建资源读取用的。
