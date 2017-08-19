@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>uba 开始</title>
+    <link rel="stylesheet" href="source/app.css"/>
+    <link rel="stylesheet" href="source/highlight.min.css">
+</head>
+<body>
+<a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+
+<!-- Docs master nav -->
+<header class="navbar navbar-static-top docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a href="https://github.com/uba-templates" class="navbar-brand">uba</a>
+            
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                    
+                    <li class="active">
+                        
+                        <a href="index.html">开始</a>
+                        
+                    </li>
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Docs page layout -->
+
+<div class="docs-header" id="content" style="margin-bottom:0">
+    <div class="container">
+        <h1>uba</h1>
+        <p>开始使用</p>
+    </div>
+</div>
+
+
+
+<header style="height:20px"></header>
+
+
+<div class="container docs-container">
+    
+    
+    <div class="row">
+        <div class="col-md-9 markdown-body" role="main">
+            
+            <h1 id="React Single Pages Application 1.0.0">React Single Pages Application 1.0.0</h1><blockquote>
+<p>基于webpack+react搭建基本快速开发脚手架并使用强大的集成开发工具<a href="https://github.com/iuap-design/tinper-uba"> uba </a></p>
+</blockquote>
+<h3 id="说明">说明</h3><ul>
+<li><p>本脚手架依赖于前端集成开发工具<a href="https://github.com/iuap-design/tinper-uba"> uba </a>，项目生成的时候需要安装全局工具命令来使用，参与开发人员无需重复安装全局使用。</p>
+</li>
+<li><p>集成市面上常规的使用插件等配置，可以满足常规开发需求，无需繁琐复杂的配置项，简单、干净、舒服。</p>
+</li>
+<li><p>依赖强大的集成开发工具 <code>uba</code> 内置 <code>数据模拟</code>、<code>代理请求</code>、<code>静态托管</code>、<code>开放配置</code>等功能.</p>
+</li>
+<li><p>方便开发人员在快速搭建<code>react</code>前端开发项目，无需学习复杂配置环境，拆箱即用.</p>
+</li>
+</ul>
+<h3 id="安装与使用">安装与使用</h3><ol>
+<li><p>安装<code>uba</code> 命令：<code>npm install uba -g</code>.</p>
+</li>
+<li><p>执行<code>uba</code>命令来查看帮助.</p>
+</li>
+<li><p>生成本脚手架 命令：<code>uba init</code>选择<code>template-react-single-pages</code>回车继续等待安装即可。(可以使用默认的npm来安装，也可以手动后续来安装)</p>
+</li>
+<li><p>启动开发<code>npm run dev</code>,稍等片刻会自动打开默认浏览器显示.</p>
+</li>
+<li><p>开发完毕后，使用命令<code>npm run build</code>来产出所需的静态资源依赖文件.</p>
+</li>
+<li><p>享受集成开发工具<code>uba</code>给你带来的方便体验来开发吧！</p>
+</li>
+</ol>
+<h3 id="默认内置">默认内置</h3><ul>
+<li><code>react 15.6.1</code>、<code>react-dom 15.6.1</code>、<code>webpack</code>.</li>
+<li><code>babel</code>、<code>ES5\6</code>、<code>postcss</code>、<code>Less</code>、<code>图片处理</code>、<code>字体处理</code>、<code>热部署</code>.</li>
+</ul>
+<h3 id="资源说明">资源说明</h3><pre><code class="lang-base">
+├── LICENSE
+├── README.md
+├── mock                               # 数据模拟存放文件夹
+│   └── api
+│       └── user
+│           ├── get.json
+│           └── post.json
+├── package.json
+├── postcss.config.js                  # postcss的基本配置文件
+├── src                                # 开发源代码
+│   ├── assets                         # 开发使用到的资源文件
+│   │   └── images
+│   │       ├── favicon.png
+│   │       └── logo.png
+│   ├── components                     # react组件存放
+│   │   └── Test
+│   │       ├── index.css
+│   │       └── index.js
+│   ├── entry                          # react入口的文件
+│   │   ├── index.css
+│   │   ├── index.html
+│   │   └── index.js
+│   ├── pages                          # 业务模块存放的文件夹
+│   │   └── App.js
+│   └── static                         # 可以直接静态资源托管的文件夹
+│       └── js
+│           └── demo.js
+├── uba.config.js                      # uba的核心配置文件
+└── uba.mock.js                        # uba配置数据模拟
+</code></pre>
+<h3 id="修改默认配置">修改默认配置</h3><p>项目核心文件<code>uba.config.js</code>里面包含所有的配置，主要是基于<code>webpack3</code>配置，修改需谨慎。</p>
+<p>数据模拟配置文件<code>uba.mock.js</code>可以配置需要模拟的请求方式，简单易懂，默认带完整配置。支出8种请求模式(<code>OPTIONS</code>,<code>HEAD</code>,<code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>,<code>TRACE</code>,<code>CONNECT</code>)</p>
+<h4 id="常见问题说明">常见问题说明</h4><ol>
+<li><p>服务器IP或端口冲突需要修改：</p>
+<pre><code class="lang-js">//服务启动设置
+const svrConfig = {
+ host: &quot;127.0.0.1&quot;,
+ port: 3000
+};
+</code></pre>
+</li>
+<li><p>代理服务的设置：
+如下配置，<code>proxyConfig</code>是一个数组对象参数，可以配置多个，当<code>enable:true</code>的时候，启用该代理功能，<code>router:&quot;proxy&quot;</code>代理的路径是哪个，当配置成proxy的时候，访问我们的项目<code>http://127.0.0.1:3000/proxy/你的代理路径资源地址</code>这样来访问就可以了。
+例子里面的地址是<code>url:&quot;cnodejs.org&quot;</code>，远程的接口访问是：<code>http://cnodejs.org/api/v1/topics</code>；本地代理过去访问地址就是：<code>http://127.0.0.1:3000/proxy/api/v1/topics</code>，也可以去掉<code>proxy</code>这个代理路由，但是这样会导致路由跟现有的项目冲突，这样会有问题的。最好在请求数据的时候去配置一个可控制的参数来切换数据模拟和代理线上的问题。</p>
+<p>当有需要排除不需要代理的情况，可以设置<code>filter</code>该参数，来编程去实现哪些资源是走代理，哪些不走代理。具体需要查询文档<a href="https://www.npmjs.com/package/express-http-proxy">proxy</a></p>
+<pre><code class="lang-js">//远程代理访问，可以配置多个代理服务
+const proxyConfig = [{
+ enable: true,//true启用代理,mock服务失效.
+ router: &quot;/proxy&quot;,//代理本地对外的路径
+ url: &quot;cnodejs.org&quot;,
+ options : {
+   filter : function(req,res){
+     return (req.url.indexOf(&quot;webpack_hmr&quot;) &gt; -1 ? false : true);
+   }
+ }
+}];
+</code></pre>
+</li>
+<li><p>如何开启静态资源托管：</p>
+<pre><code class="lang-js">//静态服务托管
+const staticConfig = {
+ folder: &quot;src/static&quot;
+};
+</code></pre>
+<p>找到该配置，直接设置<code>src/static</code>文件夹为直接对外开启静态目录功能，不受webpack影响，单独存在的，访问资源地址是：<code>http://127.0.0.1:3000/js/demo.js</code>，访问到的资源：<code>src/static/*</code>下的所有资源。</p>
+</li>
+<li><p>不想配置模拟数据路由直接访问<code>mock</code>下的<code>json</code> :</p>
+<p><code>uba-server</code>插件默认加载根目录<code>mock</code>文件夹内的资源托管，可以直接访问里面的<code>json</code>文件。<code>http://127.0.0.1:3000/api/user/get.json</code>-&gt;<code>./mock/api/user/get.json</code>。</p>
+</li>
+<li><p><code>devConfig</code>是开发环境，是给<code>uba-server</code>插件读取用的，<code>prodConfig</code>是生产环境，是给<code>uba-build</code>构建资源读取用的。</p>
+</li>
+</ol>
+
+        </div>
+        <div class="col-md-3" role="complementary">
+            <nav class="docs-sidebar hidden-print hidden-xs hidden-sm">
+                <ul class="nav docs-sidenav">
+                    
+                    
+                    
+                        <li>
+                            <a href="#说明" >说明</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#安装与使用" >安装与使用</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#默认内置" >默认内置</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#资源说明" >资源说明</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#修改默认配置" >修改默认配置</a>
+                        </li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="docs-footer" role="contentinfo">
+    <div class="container">
+        <p>Made By YonYouFED. © 2017</p>
+    </div>
+</footer>
+
+<script src="source/jquery.min.js"></script>
+<script src="source/bootstrap.min.js"></script>
+<script src="source/docs.min.js"></script>
+<script src="source/highlight.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('code').each(function(i, block) {
+            if (block.innerHTML.indexOf('\n') != -1) {
+                var pn = block.parentNode;
+                if (pn.tagName.toUpperCase() == 'PRE') {
+                    try {
+                        hljs.highlightBlock(block);
+                    } catch(e) {}
+                } else {
+                    pn.innerHTML = '<pre><code>' + block.innerHTML + '</code></pre>';
+                    try {
+                        hljs.highlightBlock(pn.childNodes[0].childNodes[0]);
+                    } catch(e) {}
+                }
+            }
+        });
+
+        var winHeight = $(window).height() - 40,
+            sidebar = $('.docs-sidebar');
+
+        if (sidebar.height() > winHeight) {
+
+            sidebar.css('max-height', winHeight + 'px');
+            sidebar.css('overflow', 'scroll');
+
+            var activeMenu,
+                barScroll = false;
+
+            sidebar.on('mouseover', function() {
+                barScroll = true;
+            });
+
+            sidebar.on('mouseout', function() {
+                barScroll = false;
+            });
+            if (!barScroll) {
+                var activeItem = $('.docs-sidebar li.active a');
+                if (activeItem.length) {
+                    if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                        activeMenu = activeItem;
+                        var top = activeMenu.offset().top - sidebar.offset().top;
+                        if (top < 0) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top);
+                        } else if (top > winHeight - 30) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                        }
+                    }
+                }
+            }
+            $(window).on('scroll', function(e) {
+                if (!barScroll) {
+                    var activeItem = $('.docs-sidebar li.active a');
+                    if (activeItem.length) {
+                        if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                            activeMenu = activeItem;
+                            var top = activeMenu.offset().top - sidebar.offset().top;
+                            if (top < 0) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top);
+                            } else if (top > winHeight - 30) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

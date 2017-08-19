@@ -1,0 +1,26 @@
+{
+    "name": "uba",
+    "common": {
+        "title": "uba",
+        "footer": "Made By YonYouFED. © 2017",
+        "home": "uba",
+        "homeUrl": "https://github.com/uba-templates",
+        "navbars": []
+    },
+    "options": {
+        "markdown": {
+            "menuLevel": 2
+        }
+    },
+    "pages": [
+        {
+            "name": "index",
+            "title": "开始",
+            "banner": {
+                "title": "uba",
+                "description": "开始使用"
+            },
+            "content": "./docs/index.md"
+        }
+    ]
+}
