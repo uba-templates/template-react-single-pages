@@ -11,7 +11,9 @@ const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 //服务启动设置
 const svrConfig = {
   host: "127.0.0.1",
-  port: 3000
+  port: 3000,
+  //是否开启静默模式？true开启，紧显示错误和警告，如要看信息为false。
+  noInfo: false
 };
 
 //远程代理访问，可以配置多个代理服务

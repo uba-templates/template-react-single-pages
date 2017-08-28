@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-spa-pages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "uba boilerplate react spa",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.1",
-    "uba": "^2.1.6",
+    "uba": "2.1.8",
     "url-loader": "^0.5.8",
     "webpack": "^3.5.4",
     "webpack-hot-middleware": "^2.18.2"
