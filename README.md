@@ -53,17 +53,17 @@
 │   │   └── Test
 │   │       ├── index.css
 │   │       └── index.js
-│   ├── entry                          # react入口的文件
-│   │   ├── index.css
-│   │   ├── index.html
-│   │   └── index.js
-│   ├── pages                          # 业务模块存放的文件夹
-│   │   └── App.js
-│   └── static                         # 可以直接静态资源托管的文件夹
-│       └── js
-│           └── demo.js
+│   ├── static                         # 静态文件目录
+│   │ 
+│   │ 
+│   ├── index.css
+│   ├── index.html
+│   └── index.js                       # react入口的文件
+│ 
+│ 
 ├── uba.config.js                      # uba的核心配置文件
 └── uba.mock.js                        # uba配置数据模拟
+
 
 ```
 
