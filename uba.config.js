@@ -112,7 +112,7 @@ const devConfig = {
     ],
     resolve: {
         extensions: [
-            ".js", "jsx"
+            ".js", ".jsx"
         ],
         alias: {
             components: path.resolve(__dirname, "src/components/"),
