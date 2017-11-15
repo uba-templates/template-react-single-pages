@@ -33,12 +33,22 @@ const staticConfig = {
     folder: "src/static"
 };
 
+//提取package里的包
+function getVendors(){
+	let pkg = require("./package.json");
+	let _vendors = [];
+	for (const key in pkg.dependencies) {
+		_vendors.push(key);
+	}
+	return _vendors;
+}
+
 
 //开发环境的webpack3配置
 const devConfig = {
     devtool: "cheap-module-source-map",
     entry: {
-        vendors: ["react", "react-dom"],
+        vendors: ["react","react-dom"],
         app: ["./src/index.js",hotMiddlewareScript]
     },
     output: {
@@ -48,7 +58,8 @@ const devConfig = {
     },
     externals: {
         "react": "React",
-        "react-dom": "ReactDOM"
+        "react-dom": "ReactDOM",
+        "react-router" : "ReactRouter"
     },
     module: {
         rules: [{
@@ -91,6 +102,7 @@ const devConfig = {
         }]
     },
     plugins: [
+        new webpack.NamedModulesPlugin(),
         new CommonsChunkPlugin({
             name: "vendors"
         }),
@@ -127,7 +139,7 @@ const devConfig = {
 //生产环境的webpack3配置
 const prodConfig = {
     entry: {
-        vendors: ["react", "react-dom"],
+        vendors: ["react","react-dom"],
         app: "./src/index.js"
     },
     output: {
@@ -137,7 +149,8 @@ const prodConfig = {
     },
     externals: {
         "react": "React",
-        "react-dom": "ReactDOM"
+        "react-dom": "ReactDOM",
+        "react-router" : "ReactRouter"
     },
     module: {
         rules: [{

@@ -1,4 +1,4 @@
-# React Single Pages Application 1.0.0
+# React Single Pages Application 1.0.5
 
 > 基于webpack+react搭建基本快速开发脚手架并使用强大的集成开发工具[ uba ](https://github.com/iuap-design/tinper-uba)
 
@@ -28,7 +28,7 @@
 
 ### 默认内置
 
-- `react 15.6.1`、`react-dom 15.6.1`、`webpack`.
+- `react`、`react-dom`、`react-router`、`webpack`.
 - `babel`、`ES5\6`、`postcss`、`Less`、`图片处理`、`字体处理`、`热部署`.
 
 ### 资源说明
