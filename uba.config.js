@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 //服务启动设置
 const svrConfig = {
@@ -44,11 +44,11 @@ function getVendors(){
 }
 
 
-//开发环境的webpack3配置
+//开发环境的webpack配置
 const devConfig = {
     devtool: "cheap-module-source-map",
     entry: {
-        vendors: ["react","react-dom"],
+        vendors: getVendors(),
         app: ["./src/index.js",hotMiddlewareScript]
     },
     output: {
@@ -136,10 +136,10 @@ const devConfig = {
 
 
 
-//生产环境的webpack3配置
+//生产环境的webpack配置
 const prodConfig = {
     entry: {
-        vendors: ["react","react-dom"],
+        vendors: getVendors(),
         app: "./src/index.js"
     },
     output: {
@@ -199,11 +199,7 @@ const prodConfig = {
         new ExtractTextPlugin({
             filename: "[name].[hash].css"
         }),
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        new UglifyJSPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
