@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import route from './route';
-import './index.css';
+import './index.less';
 
 ReactDOM.render(route, document.querySelector("#app"));
