@@ -1,6 +1,6 @@
 {
-  "name": "webpack-react-spa-pages",
-  "version": "1.0.5",
+  "name": "webpack-react-single-pages",
+  "version": "1.0.6",
   "description": "uba boilerplate react spa",
   "main": "index.js",
   "scripts": {
