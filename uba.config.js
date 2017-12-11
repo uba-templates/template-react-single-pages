@@ -104,6 +104,25 @@ const rules = [{
 }]
 
 
+//开发和生产共用基本插件
+const plugins = [
+  new CommonsChunkPlugin({
+    name: "vendors"
+  }),
+  new ExtractTextPlugin({
+    filename: "[name].[hash].css"
+  }),
+  new HtmlWebpackPlugin({
+    filename: "index.html",
+    template: "./src/index.html",
+    inject: "body",
+    hash: false,
+    favicon: "./src/assets/images/favicon.png",
+    chunks: ["vendors", "app"]
+  })
+];
+
+
 //开发环境的webpack配置
 const devConfig = {
   devtool: "cheap-module-source-map",
@@ -120,30 +139,16 @@ const devConfig = {
   module: {
     rules: rules
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new CommonsChunkPlugin({
-      name: "vendors"
-    }),
-    new ExtractTextPlugin({
-      filename: "[name].[hash].css"
-    }),
-    new OpenBrowserPlugin({
-      url: `http://${svrConfig.host}:${svrConfig.port}`
-    }),
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html",
-      inject: "body",
-      hash: false,
-      favicon: "./src/assets/images/favicon.png",
-      chunks: ["vendors", "app"]
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: plugins,
   resolve: resolve
 }
 
+//开发使用插件
+devConfig.plugins.push(new webpack.NamedModulesPlugin());
+devConfig.plugins.push(new OpenBrowserPlugin({
+  url: `http://${svrConfig.host}:${svrConfig.port}`
+}));
+devConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 
 //生产环境的webpack配置
@@ -161,31 +166,20 @@ const prodConfig = {
   module: {
     rules: rules
   },
-  plugins: [
-    new CommonsChunkPlugin({
-      name: "vendors"
-    }),
-    new ExtractTextPlugin({
-      filename: "[name].[hash].css"
-    }),
-    new UglifyJSPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html",
-      inject: "body",
-      hash: true,
-      favicon: "./src/assets/images/favicon.png",
-      chunks: ["vendors", "app"]
-    })
-  ],
+  plugins: plugins,
   resolve: resolve
 }
+
+
+//生产使用插件
+prodConfig.plugins.push(new UglifyJSPlugin());
+prodConfig.plugins.push(new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify('production')
+  }
+}));
+prodConfig.plugins.push(new CleanWebpackPlugin(['dist']));
+
 
 
 
