@@ -109,7 +109,7 @@ const devConfig = {
   devtool: "cheap-module-source-map",
   entry: {
     vendors: getVendors(),
-    app: ["./src/index.js", hotMiddlewareScript]
+    app: ["babel-polyfill","./src/index.js", hotMiddlewareScript]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -150,7 +150,7 @@ const devConfig = {
 const prodConfig = {
   entry: {
     vendors: getVendors(),
-    app: "./src/index.js"
+    app: ["babel-polyfill","./src/index.js"]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
