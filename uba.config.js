@@ -7,6 +7,7 @@ const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const Jarvis = require("webpack-jarvis");
 
 //服务启动设置
 const svrConfig = {
@@ -45,9 +46,11 @@ function getVendors() {
 
 //优化配置，对于使用CDN作为包资源的引用从外到内的配置
 const externals = {
+  "axios" : "axios",
   "react": "React",
   "react-dom": "ReactDOM",
-  "react-router": "ReactRouter"
+  "react-router": "ReactRouter",
+  "tinper-bee": "TinperBee"
 }
 
 //默认加载扩展名、相对JS路径模块的配置
@@ -109,7 +112,7 @@ const devConfig = {
   devtool: "cheap-module-source-map",
   entry: {
     vendors: getVendors(),
-    app: ["babel-polyfill","./src/index.js", hotMiddlewareScript]
+    app: ["./src/index.js", hotMiddlewareScript]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -121,6 +124,9 @@ const devConfig = {
     rules: rules
   },
   plugins: [
+    new Jarvis({
+      port : 8888
+    }),
     new CommonsChunkPlugin({
       name: "vendors"
     }),
@@ -149,7 +155,7 @@ const devConfig = {
 const prodConfig = {
   entry: {
     vendors: getVendors(),
-    app: ["babel-polyfill","./src/index.js"]
+    app: ["./src/index.js"]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),

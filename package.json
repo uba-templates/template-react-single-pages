@@ -10,30 +10,32 @@
   "author": "yueming@yonyou.com",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.17",
-    "css-loader": "^0.28.7",
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.9",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^2.1.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "open-browser-webpack-plugin": "0.0.5",
-    "postcss-loader": "^2.0.9",
-    "style-loader": "^0.19.0",
+    "postcss-loader": "^2.0.10",
+    "style-loader": "^0.20.1",
     "uba": "2.3.0",
-    "uglifyjs-webpack-plugin": "^1.1.2",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
-    "webpack-hot-middleware": "^2.21.0"
+    "webpack-hot-middleware": "^2.21.0",
+    "webpack-jarvis": "^0.2.2"
   },
   "dependencies": {
-    "tinper-bee": "^1.2.0"
+    "classnames": "^2.2.5",
+    "mirrorx": "^0.2.10"
   }
 }
