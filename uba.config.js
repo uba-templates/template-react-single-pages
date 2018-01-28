@@ -12,20 +12,19 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const svrConfig = {
   host: "127.0.0.1",
   port: 3000,
-  //是否开启静默模式？true开启，紧显示错误和警告，如要看信息为false。
-  noInfo: false
+  noInfo: false,
+  historyApiFallback : false
 };
 
 //远程代理访问，可以配置多个代理服务
 const proxyConfig = [{
-  enable: false, //true启用代理,mock服务失效.
-  router: "/", //代理的路由
-  url: "cnodejs.org",
-  options: {
-    filter: function(req, res) { //不需要代理可以排除
-      return (req.url.indexOf("webpack_hmr") > -1 ? false : true);
-    }
-  }
+  enable: true,
+  router: "/api/*",
+  url: "http://cnodejs.org"
+},{
+  enable: true,
+  router : ["/users/*","/orgs/*"],
+  url: "https://api.github.com"
 }];
 
 //静态服务托管
