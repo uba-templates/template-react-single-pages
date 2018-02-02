@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const Jarvis = require("webpack-jarvis");
 
@@ -82,8 +82,8 @@ const rules = [{
 }, {
   test: /\.less$/,
   use: ExtractTextPlugin.extract({
-    use: ['css-loader', 'postcss-loader', 'less-loader'],
-    fallback: 'style-loader'
+    use: ["css-loader", "postcss-loader", "less-loader"],
+    fallback: "style-loader"
   })
 }, {
   test: /\.(png|jpg|jpeg|gif)(\?.+)?$/,
@@ -109,7 +109,7 @@ const rules = [{
 
 //开发环境的webpack配置
 const devConfig = {
-  devtool: "cheap-module-source-map",
+  devtool: "cheap-module-eval-source-map",
   entry: {
     vendors: getVendors(),
     app: ["./src/index.js", hotMiddlewareScript]
@@ -153,6 +153,7 @@ const devConfig = {
 
 //生产环境的webpack配置
 const prodConfig = {
+  devtool:"source-map",
   entry: {
     vendors: getVendors(),
     app: ["./src/index.js"]
@@ -174,12 +175,14 @@ const prodConfig = {
       filename: "[name].[hash].css"
     }),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
       }
     }),
-    new UglifyJSPlugin(),
-    new CleanWebpackPlugin(['dist']),
+    new UglifyJSPlugin({
+      sourceMap : true
+    }),
+    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",

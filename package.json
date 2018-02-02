@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-single-pages",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "uba boilerplate react spa",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,8 @@
     "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.0.10",
     "style-loader": "^0.20.1",
-    "uba": "2.3.0",
-    "uglifyjs-webpack-plugin": "^1.1.6",
+    "uba": "2.3.4",
+    "uglifyjs-webpack-plugin": "^1.1.8",
     "url-loader": "^0.6.2",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-jarvis": "^0.2.2"
