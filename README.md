@@ -34,8 +34,25 @@
 ### 资源说明
 
 ```base
-
-
+root
+├── mock                          # 本地数据模拟
+│   └── user
+└── src                           # 项目源代码
+    ├── components                # 公共提取复用组件
+    │   └── Reference             # 演示使用参照组件
+    ├── layout                    # 布局组件
+    ├── modules                   # 业务模块
+    │   └── bdm                   # 具体业务模块
+    │       ├── components        # 业务级别复用组件
+    │       │   └── User          # 演示组件
+    │       ├── containers        # 容器类组件
+    │       ├── models            # 数据模型
+    │       └── services          # 数据请求服务
+    ├── routes                    # 路由表
+    ├── static                    # 资源
+    │   ├── font
+    │   └── images
+    └── utils                     # 工具类
 
 ```
 
