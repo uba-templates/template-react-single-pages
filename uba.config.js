@@ -26,10 +26,6 @@ const proxyConfig = [{
   enable: true,
   router: ["/users/*", "/orgs/*"],
   url: "https://api.github.com"
-},{
-  enable: true,
-  router: '/mes/*',
-  url: "http://10.11.113.33:8080"
 }];
 
 
