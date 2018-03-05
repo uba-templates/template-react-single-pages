@@ -1,11 +1,12 @@
+/**
+ * 模拟数据设置
+ */
+
 module.exports = {
   "GET": [{
-    "/User/Get": "./mock/api/user/get.json"
+    "/local/user/get": "./mock/user/get.json"
   }],
   "POST": [{
-    "/User/Post": "./mock/api/user/post.json"
-  }],
-  "PUT": [{
-    "/User/Put": "./mock/api/user/put.json"
+    "/local/user/post": "./mock/user/post.json",
   }]
 }

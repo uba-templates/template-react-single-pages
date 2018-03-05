@@ -13,8 +13,8 @@ const Jarvis = require("webpack-jarvis");
 const svrConfig = {
   host: "127.0.0.1",
   port: 3000,
-  noInfo: false,
-  historyApiFallback : false
+  historyApiFallback : false,
+  noInfo: false
 };
 
 //远程代理访问，可以配置多个代理服务
@@ -24,14 +24,14 @@ const proxyConfig = [{
   url: "http://cnodejs.org"
 },{
   enable: true,
-  router : ["/users/*","/orgs/*"],
+  router: ["/users/*", "/orgs/*"],
   url: "https://api.github.com"
+},{
+  enable: true,
+  router: '/mes/*',
+  url: "http://10.11.113.33:8080"
 }];
 
-//静态服务托管
-const staticConfig = {
-  folder: "src/static"
-};
 
 //提取package里的包
 function getVendors() {
@@ -49,19 +49,20 @@ const externals = {
   "axios" : "axios",
   "react": "React",
   "react-dom": "ReactDOM",
-  "react-router": "ReactRouter",
   "tinper-bee": "TinperBee"
 }
 
 //默认加载扩展名、相对JS路径模块的配置
 const resolve = {
   extensions: [
-    ".jsx", ".js"
+    ".jsx", ".js",".less",".css",".json"
   ],
   alias: {
     components: path.resolve(__dirname, "src/components/"),
-    assets: path.resolve(__dirname, "src/assets/"),
-    containers: path.resolve(__dirname, "src/containers/")
+    modules: path.resolve(__dirname, "src/modules/"),
+    routes : path.resolve(__dirname, "src/routes/"),
+    layout : path.resolve(__dirname, "src/layout/"),
+    utils : path.resolve(__dirname, "src/utils/")
   }
 }
 
@@ -76,14 +77,24 @@ const rules = [{
 }, {
   test: /\.css$/,
   use: ExtractTextPlugin.extract({
-    use: ["css-loader", "postcss-loader"],
+    use: [{
+      loader:"css-loader",
+      options:{
+        modules : false
+      }
+    }, "postcss-loader"],
     fallback: "style-loader"
   })
 }, {
   test: /\.less$/,
   use: ExtractTextPlugin.extract({
-    use: ["css-loader", "postcss-loader", "less-loader"],
-    fallback: "style-loader"
+    use: [{
+      loader:"css-loader",
+      options:{
+        modules : false
+      }
+    }, 'postcss-loader' ,'less-loader'],
+    fallback: 'style-loader'
   })
 }, {
   test: /\.(png|jpg|jpeg|gif)(\?.+)?$/,
@@ -91,8 +102,8 @@ const rules = [{
   use: [{
     loader: "url-loader",
     options: {
-      limit: 10000,
-      name: "[name].[hash:8].[ext]"
+      limit: 8196,
+      name: "images/[name].[ext]"
     }
   }]
 }, {
@@ -100,7 +111,7 @@ const rules = [{
   use: [{
     loader: "file-loader",
     options: {
-      name: "[name].[hash:8].[ext]"
+      name: "images/[name].[ext]"
     }
   }]
 }]
@@ -112,11 +123,11 @@ const devConfig = {
   devtool: "cheap-module-eval-source-map",
   entry: {
     vendors: getVendors(),
-    app: ["./src/index.js", hotMiddlewareScript]
+    app: ["./src/app.jsx", hotMiddlewareScript]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].[hash].js",
+    filename: "[name].js",
     publicPath: "/"
   },
   externals: externals,
@@ -124,14 +135,11 @@ const devConfig = {
     rules: rules
   },
   plugins: [
-    new Jarvis({
-      port : 8888
-    }),
     new CommonsChunkPlugin({
       name: "vendors"
     }),
     new ExtractTextPlugin({
-      filename: "[name].[hash].css"
+      filename: "[name].css"
     }),
     new webpack.NamedModulesPlugin(),
     new OpenBrowserPlugin({
@@ -143,8 +151,11 @@ const devConfig = {
       template: "./src/index.html",
       inject: "body",
       hash: false,
-      favicon: "./src/assets/images/favicon.png",
+      favicon: "./src/static/images/favicon.png",
       chunks: ["vendors", "app"]
+    }),
+    new Jarvis({
+      port : 8888
     })
   ],
   resolve: resolve
@@ -153,14 +164,14 @@ const devConfig = {
 
 //生产环境的webpack配置
 const prodConfig = {
-  devtool:"source-map",
+  devtool : "source-map",
   entry: {
     vendors: getVendors(),
-    app: ["./src/index.js"]
+    app: "./src/app.jsx"
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].[hash].js",
+    filename: "[name].js",
     publicPath: ""
   },
   externals: externals,
@@ -172,23 +183,26 @@ const prodConfig = {
       name: "vendors"
     }),
     new ExtractTextPlugin({
-      filename: "[name].[hash].css"
+      filename: "[name].css"
     }),
     new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
       }
     }),
-    new UglifyJSPlugin({
-      sourceMap : true
+    // new UglifyJSPlugin({
+    //   sourceMap : true
+    // }),
+    new webpack.optimize.UglifyJsPlugin({
+        sourceMap : true
     }),
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
       inject: "body",
       hash: true,
-      favicon: "./src/assets/images/favicon.png",
+      favicon: "./src/static/images/favicon.png",
       chunks: ["vendors", "app"]
     })
   ],
@@ -204,6 +218,5 @@ module.exports = {
   devConfig,
   prodConfig,
   svrConfig,
-  proxyConfig,
-  staticConfig
+  proxyConfig
 };
