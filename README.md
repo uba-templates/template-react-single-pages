@@ -1,6 +1,6 @@
 # React Single Pages Application 1.0.8
 
-> 基于`webpack` + `react` + `tinper-bee` + `mirrorx` 搭建基本快速开发脚手架并使用强大的集成开发工具[ uba ](https://github.com/iuap-design/tinper-uba)
+> 基于`uba` + `react` + `bee` + `mirrorx` 搭建基本快速开发脚手架，包含相关示例系统以及参照组件等
 
 ### 说明
 
@@ -14,19 +14,15 @@
 
 ### 安装与使用
 
-1. 安装`uba` 命令：`npm install uba -g`.
+1. 下载本仓库 `npm install` 安装依赖.
 
-2. 执行`uba`命令来查看帮助.
+2. 启动开发调试服务 `npm run dev`.
 
-3. 生成本脚手架 命令：`uba init`选择`template-react-single-pages`回车继续等待安装即可。(可以使用默认的npm来安装，也可以手动后续来安装)
+3. 构建静态资源服务 `npm run build`.
 
-4. 启动开发`npm run dev`,稍等片刻会自动打开默认浏览器显示.
+4. 享受集成开发工具`uba`给你带来的方便体验来开发吧！
 
-5. 开发完毕后，使用命令`npm run build`来产出所需的静态资源依赖文件.
-
-6. 享受集成开发工具`uba`给你带来的方便体验来开发吧！
-
-### 默认内置
+### 特性
 
 - `react`、`mirrorx`、`react-router v4`、`webpack`.
 - `babel`、`ES7`、`Postcss`、`Less`、`Png\Jpg\Svg\Woff`.
