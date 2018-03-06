@@ -56,6 +56,27 @@ root
 
 ### 预览
 
+![image](https://user-images.githubusercontent.com/3817644/37010226-85edcf0a-2125-11e8-88be-ea37d3537463.png)
+
+![image](https://user-images.githubusercontent.com/3817644/37010265-b60db51a-2125-11e8-8e2a-20250de40c4d.png)
+
+
+![image](https://user-images.githubusercontent.com/3817644/37010239-99c67374-2125-11e8-9ae8-7c5d253c25cf.png)
+
+![image](https://user-images.githubusercontent.com/3817644/37010273-bfe800d6-2125-11e8-916b-c85613a77106.png)
+
+![image](https://user-images.githubusercontent.com/3817644/37010284-ca307050-2125-11e8-9248-c88e0a208789.png)
+
+![image](https://user-images.githubusercontent.com/3817644/37010290-d468a07e-2125-11e8-8438-df47e0d90355.png)
+
+
+![image](https://user-images.githubusercontent.com/3817644/37010305-e4a44632-2125-11e8-97e7-91adec04aa02.png)
+
+
+![image](https://user-images.githubusercontent.com/3817644/37010313-f03bc11e-2125-11e8-8143-33a3c9261f2c.png)
+
+
+![image](https://user-images.githubusercontent.com/3817644/37010322-fbd4540a-2125-11e8-824b-559da9a05d88.png)
 
 
 ### 修改默认配置
