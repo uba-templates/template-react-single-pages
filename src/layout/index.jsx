@@ -13,7 +13,7 @@ export default class App extends Component {
 					<ul className="index-main">
 						{/* 生产基础数据路由 */}
 						<li className="index-main-li">
-							<h3>生产基础数据</h3>
+							<h3>基础数据</h3>
 							<ul className="index-ul">
 								<li className="index-li">
 									<Link to="/bdm/user">用户测试</Link>
