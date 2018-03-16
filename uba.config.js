@@ -7,7 +7,6 @@ const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const Jarvis = require("webpack-jarvis");
 
 //服务启动设置
 const svrConfig = {
@@ -149,9 +148,6 @@ const devConfig = {
       hash: false,
       favicon: "./src/static/images/favicon.png",
       chunks: ["vendors", "app"]
-    }),
-    new Jarvis({
-      port : 8888
     })
   ],
   resolve: resolve
