@@ -4,16 +4,12 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
-const OpenBrowserPlugin = require("open-browser-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 //服务启动设置
 const svrConfig = {
-  host: "127.0.0.1",
-  port: 3000,
-  historyApiFallback : false,
-  noInfo: false
+  historyApiFallback: false
 };
 
 //远程代理访问，可以配置多个代理服务
@@ -21,7 +17,7 @@ const proxyConfig = [{
   enable: true,
   router: "/api/*",
   url: "http://cnodejs.org"
-},{
+}, {
   enable: true,
   router: ["/users/*", "/orgs/*"],
   url: "https://api.github.com"
@@ -41,7 +37,7 @@ function getVendors() {
 
 //优化配置，对于使用CDN作为包资源的引用从外到内的配置
 const externals = {
-  "axios" : "axios",
+  "axios": "axios",
   "react": "React",
   "react-dom": "ReactDOM",
   "tinper-bee": "TinperBee"
@@ -50,14 +46,14 @@ const externals = {
 //默认加载扩展名、相对JS路径模块的配置
 const resolve = {
   extensions: [
-    ".jsx", ".js",".less",".css",".json"
+    ".jsx", ".js", ".less", ".css", ".json"
   ],
   alias: {
     components: path.resolve(__dirname, "src/components/"),
     modules: path.resolve(__dirname, "src/modules/"),
-    routes : path.resolve(__dirname, "src/routes/"),
-    layout : path.resolve(__dirname, "src/layout/"),
-    utils : path.resolve(__dirname, "src/utils/")
+    routes: path.resolve(__dirname, "src/routes/"),
+    layout: path.resolve(__dirname, "src/layout/"),
+    utils: path.resolve(__dirname, "src/utils/")
   }
 }
 
@@ -73,9 +69,9 @@ const rules = [{
   test: /\.css$/,
   use: ExtractTextPlugin.extract({
     use: [{
-      loader:"css-loader",
-      options:{
-        modules : false
+      loader: "css-loader",
+      options: {
+        modules: false
       }
     }, "postcss-loader"],
     fallback: "style-loader"
@@ -84,11 +80,11 @@ const rules = [{
   test: /\.less$/,
   use: ExtractTextPlugin.extract({
     use: [{
-      loader:"css-loader",
-      options:{
-        modules : false
+      loader: "css-loader",
+      options: {
+        modules: false
       }
-    }, 'postcss-loader' ,'less-loader'],
+    }, 'postcss-loader', 'less-loader'],
     fallback: 'style-loader'
   })
 }, {
@@ -137,9 +133,6 @@ const devConfig = {
       filename: "[name].css"
     }),
     new webpack.NamedModulesPlugin(),
-    new OpenBrowserPlugin({
-      url: `http://${svrConfig.host}:${svrConfig.port}`
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -156,7 +149,7 @@ const devConfig = {
 
 //生产环境的webpack配置
 const prodConfig = {
-  devtool : "source-map",
+  devtool: "source-map",
   entry: {
     vendors: getVendors(),
     app: "./src/app.jsx"
@@ -186,7 +179,7 @@ const prodConfig = {
     //   sourceMap : true
     // }),
     new webpack.optimize.UglifyJsPlugin({
-        sourceMap : true
+      sourceMap: true
     }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
