@@ -24,6 +24,7 @@ const proxyConfig = [{
 }];
 
 
+
 //提取package里的包
 function getVendors() {
   let pkg = require("./package.json");
@@ -193,10 +194,6 @@ const prodConfig = {
   ],
   resolve: resolve
 }
-
-
-
-
 
 //最终向uba导出配置文件
 module.exports = {
