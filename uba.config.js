@@ -1,3 +1,7 @@
+/**
+ * 核心配置文件
+ */
+
 const path = require("path");
 const hotMiddlewareScript = "webpack-hot-middleware/client?reload=true";
 const webpack = require("webpack");
@@ -16,6 +20,7 @@ const svrConfig = {
 const proxyConfig = [{
   enable: true,
   router: "/api/*",
+  headers : {"X-XSS":"X-XSS"},
   url: "http://cnodejs.org"
 }, {
   enable: true,
