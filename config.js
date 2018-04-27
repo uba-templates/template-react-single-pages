@@ -13,15 +13,15 @@ module.exports = env => {
     //appType=single，entry正常配置与webpack4一致
     //appType=multi，entry按照blob的方式设置扫描参数
     //https://www.npmjs.com/package/glob
-    // appType: "single",
-    appType: "multi",
-    // entry: "./src/app.jsx",
-    entry: "./src/pages/*/index.js",
+    appType: "single",
+    // appType: "multi",
+    entry: "./src/app.jsx",
+    // entry: "./src/pages/*/index.js",
     //HTML模板设置
-    //appType=multi 后 html节点失效，默认去查找entry一致的index.html
+    //appType=multi 会去找entry一致的路径下的html去扫描
     html: {
-      //template: "./src/index.html",
-      hash: false,
+      template: "./src/index.html",
+      hash: true,
       xhtml: true
     },
     resolve: {
