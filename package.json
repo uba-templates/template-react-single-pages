@@ -4,12 +4,13 @@
   "description": "uba boilerplate react spa",
   "private": true,
   "scripts": {
-    "dev": "uba server",
+    "dev": "uba-server",
     "build": "uba build"
   },
   "author": "yueming@yonyou.com",
   "license": "MIT",
   "devDependencies": {
+    "uba-server": "^2.0.0-rc.3",
     "uba-server-mock": "^2.0.2",
     "uba-server-proxy": "^2.0.2",
     "uba-server-static": "^2.0.1",

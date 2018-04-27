@@ -53,7 +53,7 @@ module.exports = env => {
       use: 'ts-loader'
     }],
     //加载插件
-    plugins: [
+    devPlugins: [
       new BundleAnalyzerPlugin()
     ]
   }
