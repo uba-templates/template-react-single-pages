@@ -1,0 +1,24 @@
+{
+  "proxy": [{
+    "url": "/api",
+    "options": {
+      "target": "http://cnodejs.org"
+    }
+  }, {
+    "url": ["/users", "/orgs"],
+    "options": {
+      "target": "https://api.github.com"
+    }
+  }],
+  "static": [{
+    "dir": "src/static"
+  }],
+  "mock": {
+    "GET": [{
+      "/local/user/get": "./mock/user/get.json"
+    }],
+    "POST": [{
+      "/local/user/post": "./mock/user/post.json"
+    }]
+  }
+}

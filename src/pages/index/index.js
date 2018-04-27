@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class HelloMessage extends Component {
+    render() {
+        return (
+            <div>
+                Hello {this.props.name}
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <HelloMessage name="Taylor" />,
+    document.querySelector('#app')
+);
