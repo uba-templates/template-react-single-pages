@@ -54,7 +54,10 @@ module.exports = env => {
     }],
     //加载插件
     devPlugins: [
-      new BundleAnalyzerPlugin()
+
+    ],
+    buildPlugins: [
+      //new BundleAnalyzerPlugin()
     ]
   }
   return config;
