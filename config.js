@@ -58,7 +58,10 @@ module.exports = env => {
 
     ],
     buildPlugins: [
-      //new BundleAnalyzerPlugin()
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        logLevel: 'error'
+      })
     ]
   }
   return config;
