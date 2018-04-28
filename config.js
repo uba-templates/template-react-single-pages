@@ -32,7 +32,8 @@ module.exports = env => {
         modules: path.resolve(__dirname, "src/modules/"),
         routes: path.resolve(__dirname, "src/routes/"),
         layout: path.resolve(__dirname, "src/layout/"),
-        utils: path.resolve(__dirname, "src/utils/")
+        utils: path.resolve(__dirname, "src/utils/"),
+        static: path.resolve(__dirname, "src/static/")
       },
       //默认加载ES模块扩展名
       extensions: [
