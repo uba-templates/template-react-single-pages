@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": [{
+    "username": "崔杰",
+    "sex": "女",
+    "age": 23,
+    "id": "1"
+  }, {
+    "username": "刘伟",
+    "sex": "男",
+    "age": 61,
+    "id": "2"
+  }, {
+    "username": "金明",
+    "sex": "男",
+    "age": 72,
+    "id": "3"
+  }],
+  "message": "数据请求成功"
+}

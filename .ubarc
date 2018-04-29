@@ -15,7 +15,7 @@
   }],
   "mock": {
     "GET": [{
-      "/local/user/get": "./mock/user/get.json"
+      "/nc/api/user": "./mock/nc/api/user.json"
     }],
     "POST": [{
       "/local/user/post": "./mock/user/post.json"

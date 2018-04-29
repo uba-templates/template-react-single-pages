@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "message": "部门版本获取成功",
+  "data": [{
+    "id": "0-0",
+    "title": "部门版本",
+    "children": [{
+      "id": "0-1",
+      "title": "Charles"
+    }, {
+      "id": "0-2",
+      "title": "Thomas",
+      "children": [{
+        "id": "2-1",
+        "title": "Helen"
+      }]
+    }, {
+      "id": "0-3",
+      "title": "Robert"
+    }, {
+      "id": "0-4",
+      "title": "Jeffrey"
+    }, {
+      "id": "0-5",
+      "title": "Timothy"
+    }, {
+      "id": "0-6",
+      "title": "Donna"
+    }, {
+      "id": "0-7",
+      "title": "Daniel"
+    }, {
+      "id": "0-8",
+      "title": "Larry"
+    }, {
+      "id": "0-9",
+      "title": "Mark"
+    }, {
+      "id": "0-10",
+      "title": "Anthony"
+    }, {
+      "id": "0-11",
+      "title": "Elizabeth"
+    }, {
+      "id": "0-12",
+      "title": "William"
+    }]
+  }]
+}

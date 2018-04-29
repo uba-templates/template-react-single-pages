@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "message": "工厂获取成功",
+  "data": [{
+    "id": 1,
+    "code": 97,
+    "text": "工厂 8"
+  }, {
+    "id": 2,
+    "code": 67,
+    "text": "Carol"
+  }, {
+    "id": 3,
+    "code": 60,
+    "text": "Robinson"
+  }, {
+    "id": 4,
+    "code": 78,
+    "text": "工厂 4"
+  }, {
+    "id": 5,
+    "code": 89,
+    "text": "工厂 5"
+  }, {
+    "id": 6,
+    "code": 67,
+    "text": "工厂 6"
+  }]
+}
