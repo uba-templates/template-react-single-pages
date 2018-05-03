@@ -1,12 +1,10 @@
-# React Single Pages Application 2.0.0
+# Tinper-React 2.0.0
 
 > 基于`uba` + `react` + `bee` + `mirrorx` 搭建基本快速开发脚手架，包含相关示例系统以及参照组件等
 
 ### 说明
 
 - 本脚手架依赖于前端集成开发工具[ uba ](https://github.com/iuap-design/tinper-uba)，项目生成的时候需要安装全局工具命令来使用，参与开发人员无需重复安装全局使用.
-
-- 使用[数据模拟平台](https://mock.yonyoucloud.com)来做项目代码请求数据.
 
 - 集成市面上常规的使用插件等配置，可以满足常规开发需求，无需繁琐复杂的配置项，简单、干净、舒服.
 

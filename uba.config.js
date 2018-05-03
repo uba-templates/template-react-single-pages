@@ -1,5 +1,6 @@
 /**
  * Tinper-Uba 工程配置文件
+ * 非专业人员切勿修改
  */
 
 const path = require("path");
@@ -49,14 +50,10 @@ module.exports = env => {
       // "tinper-bee": "TinperBee"
     },
     //加载器用于webpack处理未知文件格式
-    loader: [{
-      test: /\.ts$/,
-      use: 'ts-loader'
-    }],
-    //加载插件
-    devPlugins: [
-
-    ],
+    loader: [],
+    //调试环境加载插件
+    devPlugins: [],
+    //构建环境加载插件
     buildPlugins: [
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',

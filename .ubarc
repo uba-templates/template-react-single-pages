@@ -1,24 +1,38 @@
 {
-  "proxy": [{
-    "url": "/api",
-    "options": {
-      "target": "http://cnodejs.org"
+  "proxy": [
+    {
+      "url": [
+        "/api"
+      ],
+      "options": {
+        "target": "http://cnodejs.org"
+      }
+    },
+    {
+      "url": [
+        "/users",
+        "/orgs"
+      ],
+      "options": {
+        "target": "https://api.github.com"
+      }
     }
-  }, {
-    "url": ["/users", "/orgs"],
-    "options": {
-      "target": "https://api.github.com"
+  ],
+  "static": [
+    {
+      "dir": "src/static"
     }
-  }],
-  "static": [{
-    "dir": "src/static"
-  }],
+  ],
   "mock": {
-    "GET": [{
-      "/nc/api/user": "./mock/nc/api/user.json"
-    }],
-    "POST": [{
-      "/local/user/post": "./mock/user/post.json"
-    }]
+    "GET": [
+      {
+        "/nc/api/user": "./mock/nc/api/user.json"
+      }
+    ],
+    "POST": [
+      {
+        "/local/user/post": "./mock/user/post.json"
+      }
+    ]
   }
 }
