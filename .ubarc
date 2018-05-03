@@ -2,7 +2,7 @@
   "proxy": [
     {
       "url": [
-        "/api"
+        "/api/"
       ],
       "options": {
         "target": "http://cnodejs.org"
@@ -10,8 +10,8 @@
     },
     {
       "url": [
-        "/users",
-        "/orgs"
+        "/users/",
+        "/orgs/"
       ],
       "options": {
         "target": "https://api.github.com"
