@@ -4,9 +4,11 @@
 
 import React, { Component } from "react";
 import mirror, { actions, connect } from "mirrorx";
-import User from "../components/User";
-import UserModel from "../models/User";
+import asyncComponent from 'components/AsyncComponent';
+// import User from "../components/User";
 
+import UserModel from "../models/User";
+const User = asyncComponent(() => import('../components/User'));
 //注入Model
 mirror.model(UserModel);
 
