@@ -10,7 +10,7 @@
   "author": "yueming@yonyou.com",
   "license": "MIT",
   "devDependencies": {
-    "uba": "4.0.0-rc.1",
+    "uba": "4.0.0",
     "uba-server-mock": "^2.0.2",
     "uba-server-proxy": "^2.0.2",
     "uba-server-static": "^2.0.1",
