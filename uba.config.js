@@ -23,7 +23,8 @@ module.exports = env => {
     html: {
       template: "./src/index.html",
       hash: true,
-      xhtml: true
+      xhtml: true,
+      favicon: "./src/static/images/favicon.png"
     },
     resolve: {
       //模块别名
