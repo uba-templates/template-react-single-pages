@@ -19,12 +19,13 @@ const svrConfig = {
 //远程代理访问，可以配置多个代理服务
 const proxyConfig = [{
   enable: true,
-  router: "/api/*",
-  headers : {"X-XSS":"X-XSS"},
+  router: "/api/",
+  headers: { "X-XSS": "X-XSS" },
+  pathRewrite: { '^/mes': '' },
   url: "http://cnodejs.org"
 }, {
   enable: true,
-  router: ["/users/*", "/orgs/*"],
+  router: ["/users/", "/orgs/"],
   url: "https://api.github.com"
 }];
 
