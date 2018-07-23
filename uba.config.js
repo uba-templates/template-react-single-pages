@@ -102,7 +102,7 @@ const rules = [{
     options: {
       name: "[name].[hash:8].[ext]",
       options: {
-        publicPath: "assets/",
+        publicPath: "../fonts",
         outputPath: "fonts/"
       }
     }
