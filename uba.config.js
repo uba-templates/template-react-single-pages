@@ -22,7 +22,7 @@ const proxyConfig = [{
   router: "/", //代理的路由
   url: "cnodejs.org",
   options: {
-    filter: function(req, res) { //不需要代理可以排除
+    filter: function (req, res) { //不需要代理可以排除
       return (req.url.indexOf("webpack_hmr") > -1 ? false : true);
     }
   }
@@ -89,8 +89,10 @@ const rules = [{
   use: [{
     loader: "url-loader",
     options: {
-      limit: 10000,
-      name: "[name].[hash:8].[ext]"
+      limit: 1118192,
+      name: "[name].[hash:8].[ext]",
+      publicPath: "../images",
+      outputPath: "images/"
     }
   }]
 }, {
@@ -98,7 +100,11 @@ const rules = [{
   use: [{
     loader: "file-loader",
     options: {
-      name: "[name].[hash:8].[ext]"
+      name: "[name].[hash:8].[ext]",
+      options: {
+        publicPath: "assets/",
+        outputPath: "fonts/"
+      }
     }
   }]
 }]
@@ -110,12 +116,12 @@ const devConfig = {
   devtool: "cheap-module-source-map",
   entry: {
     vendors: getVendors(),
-    app: ["babel-polyfill","./src/index.js", hotMiddlewareScript]
+    app: ["babel-polyfill", "./src/index.js", hotMiddlewareScript]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].[hash].js",
-    publicPath: "/"
+    publicPath: ""
   },
   externals: externals,
   module: {
@@ -126,7 +132,7 @@ const devConfig = {
       name: "vendors"
     }),
     new ExtractTextPlugin({
-      filename: "[name].[hash].css"
+      filename: "css/[name].[hash].css"
     }),
     new webpack.NamedModulesPlugin(),
     new OpenBrowserPlugin({
@@ -150,7 +156,7 @@ const devConfig = {
 const prodConfig = {
   entry: {
     vendors: getVendors(),
-    app: ["babel-polyfill","./src/index.js"]
+    app: ["babel-polyfill", "./src/index.js"]
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
