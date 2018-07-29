@@ -16,7 +16,7 @@ module.exports = env => {
     //https://www.npmjs.com/package/glob
     appType: "single",
     // appType: "multi",
-    entry: "./src/app.jsx",
+    entry: "./src/app.js",
     // entry: "./src/pages/*/index.js",
     //HTML模板设置
     //appType=multi 会去找entry一致的路径下的html去扫描

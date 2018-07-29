@@ -10,18 +10,18 @@
   "author": "yueming@yonyou.com",
   "license": "MIT",
   "devDependencies": {
-    "uba": "4.0.1",
-    "uba-server-mock": "^2.0.2",
-    "uba-server-proxy": "^2.0.2",
-    "uba-server-static": "^2.0.1",
-    "webpack-bundle-analyzer": "^2.11.1"
+    "uba": "4.0.2",
+    "uba-server-mock": "2.0.2",
+    "uba-server-proxy": "2.0.3",
+    "uba-server-static": "2.0.1",
+    "webpack-bundle-analyzer": "^2.13.1"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "mirrorx": "^0.2.10",
-    "moment": "^2.21.0",
-    "prop-types": "^15.6.0",
+    "classnames": "^2.2.6",
+    "mirrorx": "^0.2.11",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
     "query-string": "^5.1.0",
-    "rc-form": "^2.1.7"
+    "rc-form": "^2.2.1"
   }
 }
