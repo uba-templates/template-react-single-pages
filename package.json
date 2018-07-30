@@ -1,6 +1,6 @@
 {
   "name": "tinper-react-scaffold",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "tinper react scaffold",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "yueming@yonyou.com",
   "license": "MIT",
   "devDependencies": {
-    "uba": "4.0.2",
+    "uba": "4.0.3",
     "uba-server-mock": "2.0.2",
     "uba-server-proxy": "2.0.3",
     "uba-server-static": "2.0.1",
