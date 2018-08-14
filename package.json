@@ -17,11 +17,15 @@
     "webpack-bundle-analyzer": "^2.13.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "mirrorx": "^0.2.11",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "query-string": "^5.1.0",
-    "rc-form": "^2.2.1"
+    "rc-form": "^2.2.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "tinper-bee": "^1.5.4"
   }
 }

@@ -45,10 +45,10 @@ module.exports = env => {
     //外部全局对象导入内部对象，用于内部import { Button } from 'tinper-bee'
     //key:value 形式，其中key是代表内部from模块名，value代表外部全局对象window.TinperBee
     externals: {
-      "axios": "axios",
-      "react": "React",
-      "react-dom": "ReactDOM",
-      "tinper-bee": "TinperBee"
+      // "axios": "axios",
+      // "react": "React",
+      // "react-dom": "ReactDOM",
+      // "tinper-bee": "TinperBee"
     },
     //加载器用于webpack处理未知文件格式
     loader: [],
